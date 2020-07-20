@@ -1,4 +1,4 @@
-const clockContainer = document.querySelector(".js-clock"), //js-clock 의 자식 
+const clockContainer = document.querySelector(".js-clock"), //css 스타일 선택자 , 하나만 반환
 clockTitle = clockContainer.querySelector("h1");
 
 function getTime(){
