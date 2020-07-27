@@ -4,17 +4,17 @@ const toDoform = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = 'toDos';
 
-let toDos = [];
+let toDos = []; 
 
 function deleteToDo(event){
-    const btn = event.target;
-    const li = btn.parentNode;
-    toDoList.removeChild(li);    
-    const cleanToDos = toDos.filter(function(toDo){
+    const btn = event.target;   //삭제클릭한 버튼
+    const li = btn.parentNode;  //삭제클릭한 parentNode 
+    toDoList.removeChild(li);   
+    const cleanToDos = toDos.filter(function(toDo){ //filter --> 테스트 통과시 배열로 전환
         return toDo.id !== parseInt(li.id);
     });
 
-    toDos = cleanToDos
+    toDos = cleanToDos  //삭제후 남은 todo-list 
     saveToDos();
 }
 
@@ -29,7 +29,7 @@ function paintToDo(text){
     const newId = toDos.length + 1;
 
     delBtn.innerHTML = "X";
-    delBtn.addEventListener("click",deleteToDo);
+    delBtn.addEventListener("click",deleteToDo);    //삭제버튼 이벤트 추가
 
     span.innerText = text;
 
